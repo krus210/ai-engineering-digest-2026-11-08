@@ -1,0 +1,444 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Engineering · 8 ноября 2026</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}body{margin:0;background:#10151c;color:#e9edf2;font:17px/1.65 system-ui,sans-serif}a{color:#a4d6cb;text-underline-offset:3px}button,input,select{font:inherit}button,select,input{min-height:46px;border:1px solid #52636e;border-radius:9px;background:#202c36;color:inherit;padding:8px 12px}button{cursor:pointer}input{width:100%;min-width:0}.wrap{max-width:1000px;margin:auto;padding:26px 18px 70px}header{padding:30px 0}h1{font-size:clamp(32px,5vw,54px);line-height:1.12;max-width:780px;margin:12px 0 24px}h2{font-size:27px;line-height:1.3;margin:45px 0 20px}h3{font-size:24px;line-height:1.3;margin:8px 0 14px}p{margin:12px 0}.eyebrow,.meta{color:#acbbc8;font-size:15px}.intro{max-width:760px;font-size:20px}.top{padding:20px;background:#19252e;border-left:3px solid #85baa9;border-radius:8px}.top li{margin:12px 0}nav{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}nav a{padding:9px 12px;border:1px solid #40515c;border-radius:8px;min-height:44px}.tools{display:grid;grid-template-columns:1fr auto;gap:12px;margin:24px 0}.tools input{grid-column:1/-1}.card{background:#19212b;border:1px solid #33414d;border-radius:16px;padding:24px;margin:22px 0;overflow-wrap:anywhere;scroll-margin-top:18px}.card .tag{color:#b8dccc}details{margin-top:18px;border-top:1px solid #40515c;padding-top:8px}summary{cursor:pointer;min-height:46px;padding:10px 0;color:#b5ded3}details dt{font-weight:700;color:#c9e5dd;margin-top:18px}details dd{margin:5px 0 18px}figure{margin:22px 0 8px}.shot{background:#fff;border-radius:9px;overflow:hidden;cursor:zoom-in;position:relative}.shot img{width:auto;max-width:100%;height:auto;display:block;margin-inline:auto}figcaption{font-size:15px;color:#b9c7d1;margin-top:10px}.zoom{display:block;margin:10px 0}.empty{padding:20px;border:1px solid #52636e}footer{margin-top:50px;border-top:1px solid #40515c;padding-top:20px}#lb{position:fixed;inset:0;background:#090c10f7;z-index:100;padding:16px;display:none}#lb.open{display:flex;flex-direction:column;gap:12px}.lbbar{display:flex;gap:15px;align-items:center;flex-wrap:wrap}.lbscroll{overflow:auto;flex:1;min-height:0;align-content:start;background:#20252b}.lbscroll img{display:block;max-width:none;height:auto;margin:0 auto;background:white}.lbnote{color:#b9c7d1;font-size:15px;margin:0}.hidden{display:none!important}[hidden]{display:none!important}@media(max-width:600px){.wrap{padding:18px 18px 50px}.card{padding:18px}h3{font-size:22px}.tools{grid-template-columns:1fr}.tools input{grid-column:auto}.top{padding:16px}.top ol{padding-left:23px}#lb{padding:12px}} .shot img{width:auto!important;max-width:min(100%,var(--source-max))!important}#lbimg{width:var(--full-width)!important;max-width:none!important}</style>
+<style data-visual-html-responsive="v1">
+:root {
+  --page-gutter: 22px;
+  --gutter: 22px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+}
+
+body {
+  overflow-x: visible !important;
+}
+
+.wrap,
+.nav-in,
+footer,
+[data-mobile-container] {
+  width: 100% !important;
+  margin-inline: auto;
+  padding-inline: var(--page-gutter) !important;
+}
+
+section {
+  scroll-margin-top: 70px;
+}
+
+.grid > *,
+.hero-grid > *,
+.split > *,
+.quotes > *,
+.checks > *,
+.facts > *,
+.tools > *,
+.debate > *,
+.nav-links,
+.navlinks,
+.shead > *,
+.sec-head > *,
+.tl-item,
+.timeline > *,
+[data-mobile-stack] > * {
+  min-width: 0;
+}
+
+img,
+video,
+audio,
+canvas,
+iframe,
+figure {
+  max-width: 100% !important;
+}
+
+img,
+video,
+canvas {
+  height: auto;
+}
+
+video,
+audio,
+iframe {
+  display: block;
+  width: 100% !important;
+}
+
+iframe {
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+svg {
+  max-width: 100%;
+}
+
+pre,
+table,
+.tbl,
+[data-mobile-scroll] {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+table,
+.tbl {
+  display: block;
+}
+
+[data-mobile-scroll] > svg {
+  width: 640px !important;
+  min-width: 640px !important;
+  max-width: none !important;
+  height: auto;
+}
+
+.k,
+.srcline,
+.srcline code,
+.eyebrow,
+.chip,
+.pill,
+.tag,
+.au,
+.src,
+.tc,
+.t,
+.timecode,
+.trick-head h3,
+.item-head h3,
+.check .txt,
+.talk p,
+.trick p,
+.trick li,
+.item p,
+.item li,
+.card p,
+.card li,
+.quote .q,
+.quote .ru,
+blockquote .ru,
+.tl-item p,
+.timeline p,
+.deb li,
+.callout,
+.fact .d,
+.tool .desc,
+[data-mobile-copy],
+[data-mobile-copy] p,
+[data-mobile-copy] li,
+[data-mobile-copy] dd,
+[data-mobile-wrap],
+code:not(pre code),
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.eyebrow,
+.chip,
+.pill,
+.tag,
+.au,
+.src,
+.links .src {
+  max-width: 100%;
+}
+
+.src,
+.links .src {
+  white-space: normal !important;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --page-gutter: 18px;
+    --gutter: 18px;
+    --radius: 14px;
+  }
+
+  .nav-in,
+  nav .wrap {
+    min-height: 60px;
+    height: auto !important;
+    gap: 8px !important;
+    padding-block: 8px !important;
+  }
+
+  .brand,
+  .navbrand {
+    display: none !important;
+  }
+
+  .nav-links,
+  .navlinks {
+    width: 100%;
+    margin-left: 0 !important;
+    padding-bottom: 2px;
+    justify-content: space-between;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .nav-links::-webkit-scrollbar,
+  .navlinks::-webkit-scrollbar {
+    display: block;
+    height: 2px;
+  }
+
+  nav a,
+  a.src,
+  a.tc,
+  a.t,
+  a.timecode,
+  a.btn,
+  button,
+  [role="button"],
+  .lbbtn,
+  #lb .close,
+  .lightbox .close,
+  [data-seek] {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  nav a,
+  a.src,
+  a.tc,
+  a.t,
+  a.timecode,
+  a.btn,
+  button,
+  [role="button"],
+  .lbbtn,
+  #lb .close,
+  .lightbox .close,
+  a[data-seek],
+  button[data-seek],
+  span[data-seek] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links a,
+  .navlinks a {
+    flex: 0 0 auto;
+    padding: 9px 8px !important;
+  }
+
+  section {
+    padding-block: 52px 36px !important;
+    scroll-margin-top: 56px !important;
+  }
+
+  header.hero,
+  .hero {
+    padding-block: 24px 24px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 8vw, 36px) !important;
+    line-height: 1.1;
+    margin-top: 18px;
+  }
+
+  .g2,
+  .g3,
+  .g4,
+  .grid:not(.g2):not(.g3):not(.g4),
+  .hero-grid,
+  .split,
+  .quotes,
+  .checks,
+  .facts,
+  .tools,
+  .debate,
+  [data-mobile-stack="grid"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  [data-mobile-stack="flex"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .canvas:not([data-mobile-diagram="reflow"]),
+  figure:not([data-mobile-diagram="reflow"]):has(> svg[viewBox]) {
+    max-width: 100%;
+    overflow-x: auto !important;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .canvas:not([data-mobile-diagram="reflow"]) > svg[viewBox]:not([data-mobile-diagram="reflow"]),
+  figure:not([data-mobile-diagram="reflow"]) > svg[viewBox]:not([data-mobile-diagram="reflow"]) {
+    width: 640px !important;
+    min-width: 640px !important;
+    max-width: none !important;
+    height: auto;
+  }
+
+  .talk,
+  .trick,
+  .item,
+  .card,
+  .quote,
+  .fact,
+  .check:not(ul),
+  .check > li,
+  .deb,
+  .thesis,
+  .thesis-card,
+  blockquote,
+  .callout,
+  [data-mobile-card] {
+    padding: 20px 18px !important;
+  }
+
+  blockquote {
+    margin-inline: 0 !important;
+  }
+
+  .trick-head,
+  .item-head,
+  .shead,
+  .sec-head,
+  .code .bar,
+  .tl-head,
+  blockquote footer {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .shead,
+  .sec-head {
+    align-items: flex-start;
+    margin-bottom: 20px !important;
+  }
+
+  .shead h2,
+  .sec-head h2 {
+    font-size: 24px !important;
+  }
+
+  .shead .src,
+  .sec-head .src {
+    margin-left: 0 !important;
+  }
+
+  .trick-head .tnum,
+  .item-head .tnum {
+    min-width: 38px;
+    height: 38px;
+    font-size: 19px;
+  }
+
+  .trick-head h3,
+  .item-head h3 {
+    padding-top: 4px;
+    font-size: 20px;
+  }
+
+  .who {
+    padding-left: 0;
+  }
+
+  .about,
+  .key,
+  .try,
+  .risk {
+    padding: 15px 16px;
+  }
+
+  .hero .sub,
+  .hero .lede,
+  .hero .lead,
+  .lead,
+  .lede,
+  .sec-sub,
+  .talk p,
+  .trick p,
+  .trick li,
+  .item p,
+  .item li,
+  .card p,
+  .card li,
+  .quote .q,
+  .quote .ru,
+  blockquote .ru,
+  .tl-item p,
+  .timeline p,
+  .check .txt,
+  .check > li,
+  .deb li,
+  .callout,
+  .fact .d,
+  .tool .desc,
+  .watch-item p,
+  [data-mobile-copy],
+  [data-mobile-copy] p,
+  [data-mobile-copy] li,
+  [data-mobile-copy] dd {
+    font-size: 16px !important;
+  }
+
+  .fact {
+    align-items: flex-start;
+  }
+
+  .fact .v {
+    min-width: 0 !important;
+  }
+
+  .tl {
+    padding-left: 24px;
+  }
+
+  .tl-thumbs .shot {
+    width: 100% !important;
+  }
+
+  .links {
+    align-items: stretch;
+  }
+
+  .links .src {
+    min-height: 44px;
+    padding: 9px 11px;
+  }
+
+  .check:not(ul) {
+    flex-wrap: wrap;
+  }
+
+  .check .txt {
+    flex: 1 1 220px;
+  }
+
+  #lb,
+  .lightbox {
+    padding: 16px !important;
+  }
+
+  footer {
+    padding-block: 36px 60px !important;
+  }
+}
+</style>
+</head><body><main class="wrap"><header><div class="eyebrow">AI ENGINEERING · 1–7 НОЯБРЯ 2026</div><h1>Агенты, которым можно доверить следующий шаг</h1><p class="intro">Память с проверяемым происхождением, границы исполнения и стоимость inference. На этой неделе — как измерять пользу агентских инструментов и где заканчиваются обещания их авторов.</p></header><aside class="top"><h2 style="margin-top:0">Начать с этих пяти</h2><ol><li><a href="#hn-50405649">Firecracker: что именно означает запуск за 24,5 мс</a> — Определение готовности sandbox и цена snapshot.</li><li><a href="#hn-50381329">Аудит публичных eval: проверять grader и весь протокол</a> — Проверки, которые меняют смысл benchmark.</li><li><a href="#hn-50402212">Память агента: поиск, записи и проверяемая wiki</a> — Память как система, которую можно сравнить с поиском.</li><li><a href="#hn-50391660">Классификатор Airbnb: когда fine-tuning окупает выделенный GPU</a> — Экономика специализированной модели при реальном RPM.</li><li><a href="#hn-50377456">KVGuard: sanitizer для границ KV-cache</a> — Ошибки KV-cache за пределами качества ответа.</li></ol></aside><nav aria-label="Разделы"><a href="#section-0">Память и контекст · 4</a><a href="#section-1">Среда и безопасность · 5</a><a href="#section-2">Агенты и проверка · 4</a><a href="#section-3">Serving и компиляция · 4</a><a href="#section-4">Модели и экономика · 3</a></nav><div class="tools"><input id="search" type="search" placeholder="Найти заголовок или тему" aria-label="Поиск материалов"><select id="section" aria-label="Раздел"><option value="">Все разделы</option><option>Память и контекст</option><option>Среда и безопасность</option><option>Агенты и проверка</option><option>Serving и компиляция</option><option>Модели и экономика</option></select><button id="reset">Сбросить</button></div><p id="count" aria-live="polite">Найдено: 20</p><p id="empty" class="empty" hidden>По этому запросу материалов нет. Измените запрос или сбросьте фильтры.</p><section class="group" data-group="Память и контекст"><h2 id="section-0">Память и контекст · 4</h2><article class="card" id="hn-50402212" data-card-id="hn-50402212" data-section="Память и контекст"><div class="meta">Anthropic · 06 ноября · Исследование</div><h3>Память агента: поиск, записи и проверяемая wiki</h3><p>Anthropic сравнила несколько способов хранить опыт агента: стенограммы, заметки, wiki и материал, подмешиваемый в контекст. Полезен разбор того, как отделить поиск фактов от накопления рабочего знания.</p><figure><div class="shot" data-full="assets/anthropic-memory.png" data-href="https://www.anthropic.com/research/components-of-agent-memory" data-width="1440"><img src="assets/anthropic-memory.png" alt="Компоненты памяти агента: первичные стенограммы, производные записи и использование контекста." style="--source-max:780px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Компоненты памяти агента: первичные стенограммы, производные записи и использование контекста. <a href="https://www.anthropic.com/research/components-of-agent-memory">Источник: Anthropic</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>На внутреннем наборе Stainless было 25 вопросов и около 420 млн токенов исходных материалов. Поиск вместе с растущей wiki дал 54–61% против 53% у одного поиска; это результаты авторов, а не универсальная прибавка качества.</dd><dt>Ограничение</dt><dd>Сокращение токенов ответа не учитывает всю стоимость обновления памяти. В некоторых режимах убедительного выигрыша не получилось.</dd><dt>Для моей работы</dt><dd>Для backend-агента стоит разделить первичные события, производные заметки и проверку заметок по стенограмме.</dd><dt>Следующий шаг</dt><dd>Сравнить поиск и поиск с wiki на новых вопросах; учитывать стоимость записи, обновления и чтения.</dd></dl><p><a href="https://www.anthropic.com/research/components-of-agent-memory">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50402212">Обсуждение HN</a></p></details></article><article class="card" id="hn-50350302" data-card-id="hn-50350302" data-section="Память и контекст"><div class="meta">Apify · 03 ноября · Руководство</div><h3>Цена из данных: модель пишет шаблон, код вставляет сумму</h3><p>Вместо просьбы «не придумывать цену» автор строит проверяемую цепочку: сбор страниц, статус свежести, шаблон ответа и подстановка суммы кодом. Это применимый пример границы между генерацией и бизнес-данными.</p><figure><div class="shot" data-full="assets/hn-50350302.webp" data-href="https://blog.apify.com/llm-grounding-with-live-data/" data-width="800.0"><img src="assets/hn-50350302.webp" alt="Цепочка проверки цены: сбор данных, статус, placeholder и подстановка кодом." style="--source-max:780px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Цепочка проверки цены: сбор данных, статус, placeholder и подстановка кодом. <a href="https://blog.apify.com/llm-grounding-with-live-data/">Источник: Apify</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>В демонстрации модель выводит placeholder; валидатор запрещает вручную написанные цены, после чего код подставляет цену, магазин и время. Проверка охватывала 21 страницу, из них 15 подходили под условия сравнения.</dd><dt>Ограничение</dt><dd>Результат зависит от парсинга, доступности магазина и правил допустимой цены. Ветка need_live должна принудительно исполняться кодом; общий JSON-кеш не подходит многопользовательскому сервису.</dd><dt>Для моей работы</dt><dd>Так же можно выдавать остатки, тарифы и сроки: модель выбирает объяснение, сервер отвечает за значение и происхождение.</dd><dt>Следующий шаг</dt><dd>Добавить тесты устаревшей цены, отсутствующего товара, валюты и сбоя источника; привязать кеш к пользователю и запросу.</dd></dl><p><a href="https://blog.apify.com/llm-grounding-with-live-data/">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50350302">Обсуждение HN</a></p></details></article><article class="card" id="hn-50411467" data-card-id="hn-50411467" data-section="Память и контекст"><div class="meta">LoreKit · 07 ноября · Техническая записка</div><h3>Память между инструментами: экспорт и общий адрес — разные задачи</h3><p>LoreKit предлагает обсуждать переносимость памяти через происхождение записей, жизненный цикл и устойчивые адреса. Разбор помогает сформулировать интерфейс памяти до выбора конкретного хранилища.</p><figure><div class="shot" data-full="assets/hn-50411467.png" data-href="https://www.lorekit.io/blog/open-agent-memory-format" data-width="1440"><img src="assets/hn-50411467.png" alt="Экспорт памяти одному владельцу и общий адрес для нескольких инструментов." style="--source-max:780px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Экспорт памяти одному владельцу и общий адрес для нескольких инструментов. <a href="https://www.lorekit.io/blog/open-agent-memory-format">Источник: LoreKit</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>Автор различает перенос пакета одному владельцу и одновременный доступ нескольких инструментов к одной памяти. Для второго нужны идентичность записи, права, обновления и удаление, а не только формат экспорта.</dd><dt>Ограничение</dt><dd>Это предложение автора продукта, а не принятый стандарт и не результат сравнительного эксперимента. Поля примеров иллюстрируют требования.</dd><dt>Для моей работы</dt><dd>Для нескольких агентов полезно явно определить владельца записи, версию и источник утверждения.</dd><dt>Следующий шаг</dt><dd>Выписать собственные сценарии экспорта, совместной записи и удаления; проверить, какие гарантии реально даёт текущий API.</dd></dl><p><a href="https://www.lorekit.io/blog/open-agent-memory-format">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50411467">Обсуждение HN</a></p></details></article><article class="card" id="hn-50389479" data-card-id="hn-50389479" data-section="Память и контекст"><div class="meta">TinyFish · 05 ноября · Инженерный разбор</div><h3>Исследовательский агент: планирование рядом с полной историей</h3><p>TinyResearch переносит планирование в оркестратор, который видит весь ход исследования. Поиск, ранжирование и извлечение утверждений становятся отдельными инструментами, а пробелы проверяются по журналу доказательств.</p><figure><div class="shot" data-full="assets/hn-50389479.png" data-href="https://www.tinyfish.ai/blog/inside-tinyresearch" data-width="1200.0"><img src="assets/hn-50389479.png" alt="Исследовательский цикл TinyResearch: оркестратор, инструменты и журнал утверждений." style="--source-max:780px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Исследовательский цикл TinyResearch: оркестратор, инструменты и журнал утверждений. <a href="https://www.tinyfish.ai/blog/inside-tinyresearch">Источник: TinyFish</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>В описанной архитектуре оркестратор выбирает следующий шаг на основе текущих утверждений и отсутствующих оснований. Это объясняет механизм исправления потери контекста лучше, чем один итоговый benchmark.</dd><dt>Ограничение</dt><dd>Сравнения наборов задач неоднородны; из статьи нельзя получить измеренный выигрыш новой версии по стоимости и задержке. В одном примере ответ нарушил временную границу запроса.</dd><dt>Для моей работы</dt><dd>Такой журнал полезен агенту, который должен объяснять происхождение каждого вывода и возвращаться к незакрытому вопросу.</dd><dt>Следующий шаг</dt><dd>На одинаковых запросах измерить пропущенные основания, нарушения ограничений, стоимость и время до проверяемого ответа.</dd></dl><p><a href="https://www.tinyfish.ai/blog/inside-tinyresearch">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50389479">Обсуждение HN</a></p></details></article></section><section class="group" data-group="Среда и безопасность"><h2 id="section-1">Среда и безопасность · 5</h2><article class="card" id="hn-50405649" data-card-id="hn-50405649" data-section="Среда и безопасность"><div class="meta">Самостоятельный эксперимент · 06 ноября · Эксперимент</div><h3>Firecracker: что именно означает запуск за 24,5 мс</h3><p>Автор воспроизвёл основу sandbox на Firecracker и отдельно измерил холодный запуск и восстановление snapshot. Особенно полезны определение готовности гостя и разбор памяти после записи страниц.</p><figure><div class="shot" data-full="assets/hn-50405649.png" data-href="https://antonau.tech/posts/2026/11/agents-microvm-firecracker/" data-width="700.0"><img src="assets/hn-50405649.png" alt="Распределение времени готовности: cold boot и восстановление snapshot на стенде автора." style="--source-max:700.0px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Распределение времени готовности: cold boot и восстановление snapshot на стенде автора. <a href="https://antonau.tech/posts/2026/11/agents-microvm-firecracker/">Источник: Самостоятельный эксперимент</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>На i7-6700K, Linux 6.14 и Firecracker 1.17 гостю дали 1 vCPU и 512 MiB. В 200 прогонах готовность по vsock имела p50 642 мс при запуске и 24,5 мс при восстановлении; с холодным файловым кешем — 66,2 мс.</dd><dt>Ограничение</dt><dd>Это лабораторный стенд без полноценной настройки jailer, seccomp и cgroups. Малый idle footprint не сохраняется после записи: 64 MiB приватных страниц увеличили расход примерно до 70 MiB.</dd><dt>Для моей работы</dt><dd>Snapshot полезен для коротких агентских задач, но его выигрыш нужно считать вместе с очисткой состояния и реальной нагрузкой.</dd><dt>Следующий шаг</dt><dd>Повторить cold/warm измерения с рабочим образом, политиками изоляции и записью в память; проверить утечки состояния между задачами.</dd></dl><p><a href="https://antonau.tech/posts/2026/11/agents-microvm-firecracker/">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50405649">Обсуждение HN</a></p></details></article><article class="card" id="hn-50390509" data-card-id="hn-50390509" data-section="Среда и безопасность"><div class="meta">Google · 05 ноября · Архитектура</div><h3>Agent Substrate: состояние сессии отдельно от тёплого worker</h3><p>Google описывает разделение агентской сессии и вычислительного worker: Actor хранит состояние, пул держит подготовленные среды, router назначает исполнителя. Схема полезна для сервисов с множеством нерегулярных сессий.</p><figure><div class="shot" data-full="assets/hn-50390509.png" data-href="https://opensource.googleblog.com/2026/11/sandboxing-untrusted-ai-agents-at-scale.html" data-width="999.5"><img src="assets/hn-50390509.png" alt="Архитектура Agent Substrate: состояние Actor, router и пул подготовленных worker." style="--source-max:780px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Архитектура Agent Substrate: состояние Actor, router и пул подготовленных worker. <a href="https://opensource.googleblog.com/2026/11/sandboxing-untrusted-ai-agents-at-scale.html">Источник: Google</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>Actor включает файловую систему, переменные окружения, память и сетевые правила. Парковка и snapshot позволяют освобождать worker, сохраняя возможность продолжения сессии.</dd><dt>Ограничение</dt><dd>Заявление о восстановлении менее чем за 500 мс не сопровождено достаточным описанием стенда и распределения задержек. Это описание архитектуры поставщика, не независимый тест.</dd><dt>Для моей работы</dt><dd>Разделение помогает обсуждать жизненный цикл, квоты и переносимость сессии независимо от конкретного рантайма.</dd><dt>Следующий шаг</dt><dd>Измерить p50/p99 восстановления, объём snapshot и поведение при потере worker; проверить сетевые ограничения и очистку секретов.</dd></dl><p><a href="https://opensource.googleblog.com/2026/11/sandboxing-untrusted-ai-agents-at-scale.html">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50390509">Обсуждение HN</a></p></details></article><article class="card" id="hn-50380704" data-card-id="hn-50380704" data-section="Среда и безопасность"><div class="meta">Stroq · 05 ноября · Обновление инструмента</div><h3>Stroq 0.30: цепочка происхождения рискованной команды</h3><p>В Stroq 0.30 появились стартовая карточка сессии, новая организация консоли и изменения обнаружения инструкций в данных. Инструмент связывает видимое действие агента с контекстом, который мог на него повлиять.</p><figure><div class="shot" data-full="assets/hn-50380704.png" data-href="https://github.com/AGGIB/Stroq" data-width="868.0"><img src="assets/hn-50380704.png" alt="Аудит сессии Stroq: действие и цепочка его происхождения." style="--source-max:780px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Аудит сессии Stroq: действие и цепочка его происхождения. <a href="https://github.com/AGGIB/Stroq">Источник: Stroq</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>Релиз от 5 ноября меняет Check / Live / Agents / Rules / Skills &amp; MCP, исправляет ложные срабатывания, ускоряет hooks и удаляет девять старых CLI-команд. Линейность двух шаблонов заявлена автором.</dd><dt>Ограничение</dt><dd>Это фильтр видимых команд, а не sandbox: ключ может уйти через скрипт, файл или переменную без появления в тексте команды. Собственный набор из 36 атак не заменяет аудит.</dd><dt>Для моей работы</dt><dd>Аудит происхождения полезен при разборе агентского инцидента и настройке локальных правил допуска.</dd><dt>Следующий шаг</dt><dd>Сравнить v0.29 и v0.30 на одинаковых инъекциях и легитимных командах; считать пропуски, ложные блокировки и задержку hooks.</dd></dl><p><a href="https://github.com/AGGIB/Stroq">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50380704">Обсуждение HN</a></p></details></article><article class="card" id="hn-50337394" data-card-id="hn-50337394" data-section="Среда и безопасность"><div class="meta">Nomos · 07 ноября · Обновление инструмента</div><h3>Nomos 4.11: выход из непроверенной EDIT-сессии блокирует gate</h3><p>Nomos переносит проверки жизненного цикла из инструкции модели во внешний Go runtime. В 4.11 добавлены Stop gate, egress airlock и защита пользовательских hooks при установке.</p><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>Stop hook блокирует завершение активной EDIT-сессии с непроверенными изменениями до nomos verify. Релиз также проверяет изменения защищённых verifier и trunk, временные файлы и выход из container sandbox.</dd><dt>Ограничение</dt><dd>Код и обходы здесь не проверены; worktree сам по себе не обеспечивает изоляцию ОС. Более ранние результаты Terminal-Bench нельзя приписывать 4.11, а повторные попытки нельзя называть pass@1.</dd><dt>Для моей работы</dt><dd>Внешняя проверка переходов полезна там, где агент может закончить работу раньше обязательных проверок.</dd><dt>Следующий шаг</dt><dd>На своём репозитории проверить dirty exit, verify и повторный выход в каждом клиенте; убедиться, что пользовательские hooks сохранились.</dd></dl><p><a href="https://github.com/mgantlett/nomos">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50337394">Обсуждение HN</a></p></details></article><article class="card" id="hn-50377456" data-card-id="hn-50377456" data-section="Среда и безопасность"><div class="meta">Исследователи KVGuard · 04 ноября · Исследование</div><h3>KVGuard: sanitizer для границ KV-cache</h3><p>KVGuard проверяет владение блоками и инициализацию KV-cache на CPU и GPU. Работа рассматривает ошибки serving runtime, которые обычная проверка корректности ответа модели может пропустить.</p><figure><div class="shot" data-full="assets/hn-50377456.png" data-href="https://arxiv.org/abs/2611.06138" data-width="1440"><img src="assets/hn-50377456.png" alt="KVGuard: shadow blocks и точки проверок между CPU serving runtime и GPU kernels." style="--source-max:780px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>KVGuard: shadow blocks и точки проверок между CPU serving runtime и GPU kernels. <a href="https://arxiv.org/abs/2611.06138">Источник: Исследователи KVGuard</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>Shadow metadata сопоставляет запросы и физические блоки; пять точек проверки охватывают allocator, таблицы CPU/GPU и kernels. Авторы проверили 29 исторических и 8 новых выбранных ими ошибок в vLLM и SGLang.</dd><dt>Ограничение</dt><dd>Это препринт и авторская оценка. На H100 накладные расходы сильно зависят от модели: хорошие средние для Qwen-14B не переносятся на Llama-1B, где отдельные замедления достигают 7,55× и 10,84×.</dd><dt>Для моей работы</dt><dd>Инструмент уместен в CI и перед релизом serving stack, где цена проверки ниже цены межзапросной утечки.</dd><dt>Следующий шаг</dt><dd>Проверить sanitizer на своей версии runtime и workload; отдельно измерить TPOT, TTFT и p99, а не включать его постоянно без замера.</dd></dl><p><a href="https://arxiv.org/abs/2611.06138">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50377456">Обсуждение HN</a></p></details></article></section><section class="group" data-group="Агенты и проверка"><h2 id="section-2">Агенты и проверка · 4</h2><article class="card" id="hn-50371340" data-card-id="hn-50371340" data-section="Агенты и проверка"><div class="meta">Surge · 03 ноября · Исследование</div><h3>Harness против reasoning budget: сравнение с ценой попытки</h3><p>Surge сравнила несколько coding harness и увеличение reasoning budget одной модели. Работа напоминает, что прирост завершённых задач нужно сопоставлять со стоимостью, а не только с названием обвязки.</p><figure><div class="shot" data-full="assets/hn-50371340.png" data-href="https://surgehq.ai/blog/benchmarking-coding-agent-harnesses" data-width="562.0"><img src="assets/hn-50371340.png" alt="Авторское сравнение coding harness: результат и стоимость на одной модели и наборе задач." style="--source-max:562.0px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Авторское сравнение coding harness: результат и стоимость на одной модели и наборе задач. <a href="https://surgehq.ai/blog/benchmarking-coding-agent-harnesses">Источник: Surge</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>На использованном наборе и Opus 5.5 режим xhigh без дополнительного harness дал +11,3 процентного пункта при примерно 3,5× стоимости. Некоторые harness дали меньший прирост с меньшим ростом расходов.</dd><dt>Ограничение</dt><dd>Это отдельные конфигурации одной модели и распределения задач. Размер выборки не раскрыт; равного бюджета и универсального превосходства «думать дольше» статья не доказывает.</dd><dt>Для моей работы</dt><dd>Перед усложнением оркестрации полезно проверить, не даёт ли тот же бюджет лучший результат в более простом режиме.</dd><dt>Следующий шаг</dt><dd>Построить кривую качество/стоимость на своих задачах: одинаковые лимиты денег и времени, несколько повторов, отдельный учёт review.</dd></dl><p><a href="https://surgehq.ai/blog/benchmarking-coding-agent-harnesses">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50371340">Обсуждение HN</a></p></details></article><article class="card" id="hn-50381329" data-card-id="hn-50381329" data-section="Агенты и проверка"><div class="meta">Prime Intellect · 03 ноября · Инженерный разбор</div><h3>Аудит публичных eval: проверять grader и весь протокол</h3><p>Разбор публичных оценок показывает, как утечки, форматы ответов и локальные мониторы меняют смысл результата. Материал полезен тем, кто строит собственный benchmark или доверяет итоговой таблице без проверки grader.</p><figure><div class="shot" data-full="assets/hn-50381329.png" data-href="https://www.primeintellect.ai/blog/auditing-public-evaluations" data-width="1440.0"><img src="assets/hn-50381329.png" alt="Монитор оценки: граница видимости одного вызова инструмента." style="--source-max:780px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Монитор оценки: граница видимости одного вызова инструмента. <a href="https://www.primeintellect.ai/blog/auditing-public-evaluations">Источник: Prime Intellect</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>Авторы разбирают схемы данных, проверяющие функции и обходы ограничений. Один монитор видел вызовы инструментов по отдельности: безопасные локальные шаги могли складываться в опасную последовательность.</dd><dt>Ограничение</dt><dd>Изменение протокола нарушает прямую сопоставимость с прежними числами. Монитор может давать ложные срабатывания; результаты аудита не доказывают защищённость исправленной системы от всех атак.</dd><dt>Для моей работы</dt><dd>Проверка одного ответа или tool call недостаточна для оценки поведения многошагового агента.</dd><dt>Следующий шаг</dt><dd>Версионировать grader, данные и harness; добавить проверки утечек, обходов формата и последовательностей вызовов.</dd></dl><p><a href="https://www.primeintellect.ai/blog/auditing-public-evaluations">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50381329">Обсуждение HN</a></p></details></article><article class="card" id="hn-50336405" data-card-id="hn-50336405" data-section="Агенты и проверка"><div class="meta">Trail of Bits · 02 ноября · Практический кейс</div><h3>Codex для backport: экономия подготовки не отменяет regression testing</h3><p>Trail of Bits использовала Codex для переноса исправлений безопасности на старые ветки Linux. Ценность кейса — в разделении подготовки патча, человеческого review и обязательного принятия сопровождающими.</p><figure><div class="shot" data-full="assets/hn-50336405.webp" data-href="https://blog.trailofbits.com/2026/11/02/backporting-security-fixes-at-scale-with-codex/" data-width="535.0"><img src="assets/hn-50336405.webp" alt="Версии недавно использовавшихся kernel packages в Debian popcon; контекст выбора backport." style="--source-max:535.0px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Версии недавно использовавшихся kernel packages в Debian popcon; контекст выбора backport. <a href="https://blog.trailofbits.com/2026/11/02/backporting-security-fixes-at-scale-with-codex/">Источник: Trail of Bits</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>Авторы сообщают о работе со 149 различными CVE к 29 октября. Оценки примерно 30 минут против 3 часов относятся к человеческому вниманию при подготовке и review после первоначальной настройки.</dd><dt>Ограничение</dt><dd>Это не wall-clock всего процесса и не измерение полного срока поставки исправления. Регрессионные тесты и решение maintainer остаются обязательными; числа относятся к опыту команды.</dd><dt>Для моей работы</dt><dd>Агент полезен на повторяемой части backport, если есть история изменений и возможность проверить поведение старой ветки.</dd><dt>Следующий шаг</dt><dd>Взять небольшой набор собственных backport; отдельно измерить подготовку, review, тестирование и число отклонённых патчей.</dd></dl><p><a href="https://blog.trailofbits.com/2026/11/02/backporting-security-fixes-at-scale-with-codex/">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50336405">Обсуждение HN</a></p></details></article><article class="card" id="hn-50394444" data-card-id="hn-50394444" data-section="Агенты и проверка"><div class="meta">The AI News Report · 06 ноября · Анализ практик</div><h3>663 комментария HN: рабочие схемы как гипотезы</h3><p>Авторы разобрали один HN-тред и выделили повторяющиеся способы организации coding agents: worktree, отдельный reviewer, модельный роутинг и изоляцию. Полезно читать как каталог экспериментов для команды.</p><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>Из 663 комментариев 530 участников выделены 424 пользователя AI-инструментов. Считали людей, а не комментарии; в случайной проверке десяти записей нашли одну ошибочную атрибуцию Claude.</dd><dt>Ограничение</dt><dd>Это самоотбор участников одного треда, не доли рынка. Конфигурации не запускались авторами; заявленные скорость и удобство остаются самоотчётами.</dd><dt>Для моей работы</dt><dd>Разбор помогает выбрать одну проверяемую практику, вместо одновременного внедрения всех вариантов многoагентной работы.</dd><dt>Следующий шаг</dt><dd>Сравнить одного агента и два изолированных worktree с независимым reviewer; считать завершённые задачи и время человеческой проверки.</dd></dl><p><a href="https://theainewsreport.com/2026-11-06-hn-agentic-setups-counted.html">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50394444">Обсуждение HN</a></p></details></article></section><section class="group" data-group="Serving и компиляция"><h2 id="section-3">Serving и компиляция · 4</h2><article class="card" id="hn-50393410" data-card-id="hn-50393410" data-section="Serving и компиляция"><div class="meta">Google · 05 ноября · Инструмент</div><h3>XLA Serving Engine: короткий inference без Python на пути запроса</h3><p>XSE запускает XLA-совместимые модели через компактный C++ serving path: StableHLO, Orbax и PJRT. Дизайн ориентирован на embedding, vision и recommendation, где накладные расходы Python заметны относительно вычислений.</p><figure><div class="shot" data-full="assets/hn-50393410.png" data-href="https://opensource.googleblog.com/2026/11/supercharging-xla-inference-xla-serving-engine.html" data-width="1333.5"><img src="assets/hn-50393410.png" alt="Авторское сравнение throughput XSE; переносимость зависит от модели и стенда." style="--source-max:780px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Авторское сравнение throughput XSE; переносимость зависит от модели и стенда. <a href="https://opensource.googleblog.com/2026/11/supercharging-xla-inference-xla-serving-engine.html">Источник: Google</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>Однократное выполнение модели и подготовка артефактов отделены от обработки запроса. Это ясная граница применения движка, а не предложение заменить любой autoregressive server.</dd><dt>Ограничение</dt><dd>Заявленные поставщиком ускорения 2–5× не сопровождаются достаточным протоколом для переноса на свою нагрузку. Длинная autoregressive generation требует другой организации serving.</dd><dt>Для моей работы</dt><dd>Для коротких моделей полезно профилировать orchestration overhead отдельно от времени kernels.</dd><dt>Следующий шаг</dt><dd>Сравнить p50/p99, throughput и cold start на одинаковой модели и железе; учитывать стоимость экспорта и поддержки артефактов.</dd></dl><p><a href="https://opensource.googleblog.com/2026/11/supercharging-xla-inference-xla-serving-engine.html">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50393410">Обсуждение HN</a></p></details></article><article class="card" id="hn-50391112" data-card-id="hn-50391112" data-section="Serving и компиляция"><div class="meta">Together AI · 04 ноября · Инженерный разбор</div><h3>Together Compiler: persistent engine вместо перезапуска при поиске</h3><p>Together Compiler ускоряет итерации компиляции и поиска kernels через постоянно работающий engine с заменой forward pass. Материал показывает, как время экспериментального цикла влияет на практическую оптимизацию inference.</p><figure><div class="shot" data-full="assets/hn-50391112.png" data-href="https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference" data-width="1440"><img src="assets/hn-50391112.png" alt="Persistent engine и замена forward pass в цикле компиляции." style="--source-max:780px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Persistent engine и замена forward pass в цикле компиляции. <a href="https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference">Источник: Together AI</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>Быстрый предварительный поиск кандидатов отделён от полной проверки. В статье приведены авторские результаты до 2,6× throughput и сокращение запуска engine с 467 до 9 секунд.</dd><dt>Ограничение</dt><dd>Это разные метрики: запуск engine не равен latency запроса. Здесь прочитана статья, а не независимо воспроизведён полный эксперимент; выигрыш зависит от модели и hardware.</dd><dt>Для моей работы</dt><dd>Стабильная среда исполнения полезна при многократной проверке вариантов kernels, если замена не нарушает корректность и состояние.</dd><dt>Следующий шаг</dt><dd>Измерить полный цикл compile/search/verify на своей модели; отдельно сверить численную корректность и стоимость разогрева.</dd></dl><p><a href="https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50391112">Обсуждение HN</a></p></details></article><article class="card" id="hn-50373628" data-card-id="hn-50373628" data-section="Serving и компиляция"><div class="meta">Jam · 04 ноября · Технический разбор</div><h3>JamInfer и JamRL: один KV-cache, разные жизненные циклы</h3><p>Подробный разбор связывает continuous batching, paged KV, prefix cache и reinforcement learning. Особенно полезна явная граница: кеш принадлежит конкретной версии весов и должен инвалидироваться при обновлении.</p><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>JamInfer описан как inference engine, JamRL — как отдельный цикл обучения и rollout. В нём важно различать mask токенов policy и идентификаторы сегментов, а также учитывать CPU-offload страниц.</dd><dt>Ограничение</dt><dd>Расчёты в статье объясняют устройство, но не заменяют воспроизводимый benchmark. Disaggregated serving не заявлен поддержанным; нельзя переносить свойства одного runtime на другой.</dd><dt>Для моей работы</dt><dd>Разбор помогает найти ошибки согласованности между rollout, обновлением весов и повторным использованием префиксов.</dd><dt>Следующий шаг</dt><dd>Протрассировать одну итерацию RL: версия весов, создание KV, offload и инвалидирование; добавить проверку отсутствия старых страниц после update.</dd></dl><p><a href="https://www.nabo.dev/blogs/jam-architecture">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50373628">Обсуждение HN</a></p></details></article><article class="card" id="hn-50355821" data-card-id="hn-50355821" data-section="Serving и компиляция"><div class="meta">LlamaIndex · 04 ноября · Инженерный разбор</div><h3>OCRia: ускорение начинается с профиля bandwidth и metadata</h3><p>Команда OCRia разбирает смешанную квантизацию, speculative decoding и издержки сборки metadata. Полезен путь от профиля GPU к конкретным изменениям в GDN и запуске kernels.</p><figure><div class="shot" data-full="assets/hn-50355821.png" data-href="https://www.llamaindex.ai/blog/the-inference-stack-behind-ocria" data-width="1440"><img src="assets/hn-50355821.png" alt="Профиль OCRia: соотношение вычислений и пропускной способности памяти." style="--source-max:780px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Профиль OCRia: соотношение вычислений и пропускной способности памяти. <a href="https://www.llamaindex.ai/blog/the-inference-stack-behind-ocria">Источник: LlamaIndex</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>Авторы сообщают о росте примерно с 285 до 2800 токенов/с на одном B200 для своей OCR-нагрузки. Вклад включает BF16/FP8/NVFP4, DFlash2, ReplaySSM и fusion, сокративший metadata work до одного GPU launch за шаг.</dd><dt>Ограничение</dt><dd>Полного протокола итогового сравнения и таблицы качества нет; промежуточные режимы batch различаются. Это не доказательство десятикратного уменьшения latency, и изменения ещё не все доступны upstream.</dd><dt>Для моей работы</dt><dd>Для длинного OCR-вывода нужно отдельно измерять memory bandwidth, verification и CPU/GPU metadata.</dd><dt>Следующий шаг</dt><dd>На своих документах проверить качество распознавания, batch/concurrency, throughput и p99; не складывать результаты разных режимов.</dd></dl><p><a href="https://www.llamaindex.ai/blog/the-inference-stack-behind-ocria">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50355821">Обсуждение HN</a></p></details></article></section><section class="group" data-group="Модели и экономика"><h2 id="section-4">Модели и экономика · 3</h2><article class="card" id="hn-50391660" data-card-id="hn-50391660" data-section="Модели и экономика"><div class="meta">Airbnb · 03 ноября · Production-кейс</div><h3>Классификатор Airbnb: когда fine-tuning окупает выделенный GPU</h3><p>Airbnb сравнила API и дообученные открытые модели для внутренней классификации. Результат интересен вместе с объёмом разметки, правилами выбора порога и зависимостью стоимости от реальной нагрузки.</p><figure><div class="shot" data-full="assets/hn-50391660.png" data-href="https://airbnb.tech/ai-ml/frontier-quality-at-1-of-the-cost-a-production-benchmark-of-llm-classifiers/" data-width="880.0"><img src="assets/hn-50391660.png" alt="Модель стоимости Airbnb в зависимости от RPM: ниже порога API может быть дешевле GPU." style="--source-max:780px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Модель стоимости Airbnb в зависимости от RPM: ниже порога API может быть дешевле GPU. <a href="https://airbnb.tech/ai-ml/frontier-quality-at-1-of-the-cost-a-production-benchmark-of-llm-classifiers/">Источник: Airbnb</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>На 10 000 взвешенных held-out примеров дообученная Gemma4-E2B дала F1 0,902 против 0,563 до обучения; авторы сообщают медиану 35 мс. Serving: vLLM 0.28, RTX Pro 6000, BF16 для моделей до 12B.</dd><dt>Ограничение</dt><dd>Нужны сотни тысяч доменных примеров. Порог следует выбирать на validation, а не итоговом test. Модель стоимости использует октябрьские цены и cache hit 71%; ниже примерно 15–30 RPM API дешевле выделенного GPU.</dd><dt>Для моей работы</dt><dd>Для устойчивого массового классификатора небольшая специализированная модель может быть выгоднее универсального API.</dd><dt>Следующий шаг</dt><dd>Сравнить precision/recall при фиксированном требовании качества, p99 и полную стоимость при своём RPM, включая разметку и обучение.</dd></dl><p><a href="https://airbnb.tech/ai-ml/frontier-quality-at-1-of-the-cost-a-production-benchmark-of-llm-classifiers/">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50391660">Обсуждение HN</a></p></details></article><article class="card" id="hn-50358319" data-card-id="hn-50358319" data-section="Модели и экономика"><div class="meta">MoEShift · 05 ноября · Обновление инструмента</div><h3>MoEShift Alpha 3: подготовка MoE от выбора модели до local server</h3><p>MoEShift держит часть экспертов MoE на SSD и исполняет их через Metal на Apple Silicon. Свежие Alpha 2 и 3 добавляют Qwen3.6 и первый запуск с подготовкой экспертов, проверкой конфигурации и восстановлением.</p><figure><div class="shot" data-full="assets/hn-50358319.png" data-href="https://github.com/davide-troiani/moeshift" data-width="1440"><img src="assets/hn-50358319.png" alt="Прежнее сравнение Flash Next со Strata: M4 Pro 24 GB, 256 output tokens, startup исключён. Это контекст архитектуры, не benchmark Alpha 3." style="--source-max:780px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Прежнее сравнение Flash Next со Strata: M4 Pro 24 GB, 256 output tokens, startup исключён. Это контекст архитектуры, не benchmark Alpha 3. <a href="https://github.com/davide-troiani/moeshift">Источник: MoEShift</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>Alpha 2 меняет бюджеты prompt/generation и protected LRFU-cache; Alpha 3 ведёт от выбора модели до сервера. Для Qwen3.6 в release указаны медианы 16,50/14,66 токена/с после warmup, три прогона по 512 выходных токенов.</dd><dt>Ограничение</dt><dd>Это alpha, проверенная на M4 Pro: один запрос одновременно, localhost. Peak memory в этом release не измерена. Старая диаграмма Flash Next не является новым benchmark Alpha 3.</dd><dt>Для моей работы</dt><dd>Подход полезен для локальных экспериментов с крупной MoE при ограниченной RAM и достаточно быстром SSD.</dd><dt>Следующий шаг</dt><dd>Проверить cold/warm запуск, память и latency на одинаковых prompts; отдельно прервать подготовку экспертов и проверить восстановление.</dd></dl><p><a href="https://github.com/davide-troiani/moeshift">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50358319">Обсуждение HN</a></p></details></article><article class="card" id="hn-50399821" data-card-id="hn-50399821" data-section="Модели и экономика"><div class="meta">ZelligeAI · 05 ноября · Модель и оценка</div><h3>Tessera: короткое thinking по ходу задачи ещё не completion rate</h3><p>Tessera-27B-B-CJK-RL продолжает обучение модели с компактным CJK-thinking. Карточка модели ценна явным разделением математики, отдельных agent turns и ещё не измеренного завершения coding tasks.</p><figure><div class="shot" data-full="assets/hn-50399821.webp" data-href="https://huggingface.co/ZelligeAI/Tessera-27B-B-CJK-RL" data-width="1200.0"><img src="assets/hn-50399821.webp" alt="Tessera: thinking 0,67× base на отдельных frozen turns; это не completion rate." style="--source-max:780px" loading="lazy"></div><button class="zoom" type="button">Открыть иллюстрацию</button><figcaption>Tessera: thinking 0,67× base на отдельных frozen turns; это не completion rate. <a href="https://huggingface.co/ZelligeAI/Tessera-27B-B-CJK-RL">Источник: ZelligeAI</a>.</figcaption></figure><details><summary>Механизм, основания и следующий шаг</summary><dl><dt>Что показали / как устроено</dt><dd>Rank-32 LoRA и восемь RL updates дали 108/126 правильных ответов против 97 у предшественника на 63 математических задачах по две попытки. На 64 frozen states авторы получили thinking 0,67× base и 256/256 валидных tool calls.</dd><dt>Ограничение</dt><dd>Это авторские измерения, не end-to-end coding benchmark; 15 из 16 agent tasks использовались при развитии Tessera. Возможна контаминация математики; GGUF и NVFP4 не оценены.</dd><dt>Для моей работы</dt><dd>Меньше thinking tokens может снизить стоимость шага, но требует проверки результата всей задачи.</dd><dt>Следующий шаг</dt><dd>На новых собственных задачах сравнить completion rate, thinking tokens и валидность вызовов с base и предыдущей Tessera при одинаковом бюджете.</dd></dl><p><a href="https://huggingface.co/ZelligeAI/Tessera-27B-B-CJK-RL">Первоисточник</a> · <a href="https://news.ycombinator.com/item?id=50399821">Обсуждение HN</a></p></details></article></section><footer><h2>Три эксперимента на следующую неделю</h2><ol><li>Проверить одну гипотезу памяти: поиск против поиска с wiki, с учётом цены записи.</li><li>Добавить один внешний gate и проверить как блокировку, так и восстановление после неё.</li><li>Снять профиль своей serving-нагрузки: отдельно качество, p99, throughput и стоимость.</li></ol><p class="meta">Выпуск от 8 ноября 2026. Результаты исследований и продуктов принадлежат их авторам; предложения экспериментов — редакционные.</p></footer></main><div id="lb" role="dialog" aria-modal="true" aria-label="Полная иллюстрация"><div class="lbbar"><button id="close">Закрыть</button><a id="lbsource" href="#">Первоисточник</a></div><p class="lbnote">На узком экране иллюстрацию можно прокручивать по горизонтали. Полная версия сохраняет подписи и контекст.</p><div class="lbscroll"><img id="lbimg" alt=""></div></div><script>const cards=[...document.querySelectorAll('[data-card-id]')],q=document.querySelector('#search'),s=document.querySelector('#section'),lb=document.querySelector('#lb');function filter(){let n=0;cards.forEach(c=>{const ok=(!s.value||c.dataset.section===s.value)&&c.textContent.toLocaleLowerCase('ru').includes(q.value.toLocaleLowerCase('ru'));c.hidden=!ok;n+=ok});document.querySelectorAll('.group').forEach(g=>g.hidden=![...g.querySelectorAll('[data-card-id]')].some(c=>!c.hidden));document.querySelector('#count').textContent='Найдено: '+n;document.querySelector('#empty').hidden=n>0}q.addEventListener('input',filter);s.addEventListener('change',filter);document.querySelector('#reset').onclick=()=>{q.value='';s.value='';filter()};let last;function openShot(shot){last=document.activeElement;const im=document.querySelector('#lbimg');im.src=shot.dataset.full;im.alt=shot.querySelector('img').alt;im.style.setProperty('--full-width',shot.dataset.width+'px');document.querySelector('#lbsource').href=shot.dataset.href;lb.classList.add('open');document.body.style.overflow='hidden';document.querySelector('#close').focus()}document.querySelectorAll('.shot').forEach(shot=>{shot.onclick=()=>openShot(shot);shot.parentElement.querySelector('.zoom').onclick=()=>openShot(shot)});function close(){lb.classList.remove('open');document.body.style.overflow='';last?.focus()}document.querySelector('#close').onclick=close;document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});</script></body></html>
